@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Reproducibility</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Albert Henry" />
+    <link href="libs/anchor-sections/anchor-sections.css" rel="stylesheet" />
+    <script src="libs/anchor-sections/anchor-sections.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center
+
+# Reproducibility
+### in computational research project
+
+![:scale 50%](img/projects.jpg)
+
+#### Albert Henry
+
+
+
+
+---
+# Motivation
+
+.center[![](http://phdcomics.com/comics/archive/phd031214s.gif)]
+
+
+---
+# Motivation
+
+.pull-left[
+![:fit 400px, 380px, 0%, 0%](https://www.nature.com/news/polopoly_fs/7.36718.1464174471!/image/reproducibility-graphic-online3.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online3.jpg)
+]
+
+.pull-right[
+![:fit 400px, 320px, 0%, 100%](https://www.nature.com/news/polopoly_fs/7.36718.1464174471!/image/reproducibility-graphic-online3.jpg_gen/derivatives/landscape_630/reproducibility-graphic-online3.jpg)
+]
+
+.small75[https://www.nature.com/news/1-500-scientists-lift-the-lid-on-reproducibility-1.19970]
+---
+## What is reproducibility?
+
+![](https://the-turing-way.netlify.app/_images/ReproducibleMatrix.jpg)
+
+.small75[The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986]
+
+---
+### Why reproducible research is difficult?
+.large125[
+* Different project scale
+
+* Different project goals
+
+* Takes time and effort
+
+* Different standards
+
+* Resource (un)availability
+
+* Lack of training and incentives
+]
+
+---
+### Why reproducible research is difficult?
+
+#### _Different project scale_
+
+![](img/scale_meme.png)
+---
+.pull-left[
+### Why reproducible research is difficult?
+
+#### _Different project goals_
+]
+.pull-right[![](img/goals_meme.jpg)]
+
+![](img/scale_meme.png)
+
+---
+### Why reproducible research is difficult?
+
+#### _Takes time and effort_
+&lt;br/&gt;
+.center[
+![](https://imgs.xkcd.com/comics/the_general_problem.png)
+.small75[https://imgs.xkcd.com/comics/the_general_problem.png]
+]
+---
+### Why reproducible research is difficult?
+
+#### _Different standards_
+
+.pull-left[
+![:scale 80%](img/standard1.jpg)
+
+![:scale 80%](img/standard3.jpg)
+]
+.pull-right[
+![:scale 80%](img/standard2.jpg)
+
+![:scale 80%](img/standard4.jpg)
+]
+
+---
+### Why reproducible research is difficult?
+
+#### _Resource (un)availability_
+.center[
+![:scale 45%](img/availability.jpg)
+]
+
+---
+### Why reproducible research is difficult?
+
+#### _Lack of training and incentives_
+.center[
+![:scale 75%](img/incentives.jpg)
+]
+---
+## 
+
+Agile software development practices
+
+&gt; _In software development, agile (sometimes written Agile) practices approach discovering requirements and developing solutions through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s). It advocates adaptive planning, evolutionary development, early delivery, and continual improvement, and it encourages flexible responses to change_
+
+.small75[https://en.wikipedia.org/wiki/Agile_software_development]
+
+---
+## How can we fix this?
+
+_The Turing Way_: an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science
+.center[
+![:scale 65%](https://the-turing-way.netlify.app/_images/welcome.jpg)
+
+.small75[https://the-turing-way.netlify.app/]
+]
+
+---
+## Project design
+
+_[https://github.com/alhenry/project-template](https://github.com/alhenry/project-template)_
+
+A moderately opinionated file structure template for computational research project aiming to produce a written report
+
+#### Core principles:
+
+* ___Consistent___ – follow certain structure and format
+
+* ___Simple___ – easy to follow and clear enough for someone unfamiliar with the project
+
+* ___Scalable___ – can be used for small or big projects of many kinds
+
+* ___Portable___ – easy to import, export, and sync to various computing platforms
+
+---
+_[https://github.com/alhenry/project-template](https://github.com/alhenry/project-template)_
+
+### Pre-requisites
+1. [python 3](https://docs.python.org/3/using/index.html)
+
+1. [cookiecutter](https://cookiecutter.readthedocs.io/en/1.7.0/installation.html)
+
+1. [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+1. GitHub account
+
+1. [Google account](https://support.google.com/accounts/answer/27441?hl=en)
+
+1. [Google Backup &amp; Sync](https://www.google.com/drive/download/backup-and-sync/) (Windows / Mac only)
+
+1. [ssh](https://www.ssh.com/ssh)
+
+1. [Optional] [sshfs](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh)
+
+1. [Optional] [rclone](https://rclone.org/)
+
+---
+### Directory structure
+
+```r
+./
+├── .git/ # hidden folder for git version control
+|
+├── admin/ # admin documents, e.g. meeting notes, applications, ethical approvals, MTA
+|   └── meeting_notes.gsheet
+|
+├── data/ # read only data files used as input for analysis and results
+|   ├── 2020-01/
+|   |   ├── iris.tsv
+|   |   └── mtcars.csv
+|   └── 2020-02/
+|   
+├── scripts/ # analysis scripts
+|   ├── 2020-01/
+|   |   ├── s01_data_generation.sh
+|   |   ├── s02.1_calculate_desc_stats_table1.R
+|   |   └── s02.2_figure1.ipynb
+|   └── 2020-02/
+|
+├── exploratory/ # scratch space for temporary output files / exploratory data analysis
+|
+├── results/ # output of data analysis e.g. tables, figures, jupyter notebook
+|   ├── 2020-01/
+|   |   ├── table1.tsv
+|   |   └── figure1.png
+|   └── 2020-02/
+|
+├── writing/ # Documents for writing
+|   ├── main_text.gdoc
+|   ├── supplementary_table.gsheet
+|   └── analysis_plan.gdoc
+|
+└── ...
+```
+
+---
+### Computing platforms
+
+* **local** - local machine e.g. personal laptop, UCL machine
+
+* **remote** - remote computing platform, typically a headless machine in HPC cluster (e.g. [UCL Myriad](https://wiki.rc.ucl.ac.uk/wiki/Myriad), UCL CS Cluster) or cloud computing services (e.g. [Amazon Web Service](https://aws.amazon.com/), [Google Computing Platform](https://cloud.google.com/)
+
+* **GDrive** - Google Drive
+
+* **GitHub** - GitHub
+
+* **storage** - data storage space (for backup only) e.g. [UCL Research Data Storage Service](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service), [UCL S: drive](https://www.ucl.ac.uk/isd/support-staff/s-drive-documentation/s-drive-how-it-works-permissions)
+
+---
+### Which folders live in which platforms?
+|             | local | remote | GDrive | GitHub | storage |
+|-------------|:-----:|:------:|:------:|:------:|:-------:|
+| **.git**        |   ✅   |    ✅   |        |    ✅   |         |
+| **admin**       |   ✅   |        |    ✅   |        |         |
+| **data**        |       |    ✅   |        |        |    ✅    |
+| **scripts**     |   ✅   |    ✅   |        |    ✅   |         |
+| **exploratory** |   ✅   |    ✅   |        |        |         |
+| **results**     |       |    ✅   |    ✅   |        |         |
+| **writing**     |   ✅   |        |    ✅   |        |         |
+
+---
+### How to transfer / sync files across platforms?
+
+|         | local         | remote        | GDrive                                | GitHub                                | storage       |
+|---------|---------------|---------------|---------------------------------------|---------------------------------------|---------------|
+| **local**   |               | ssh           | rclone&lt;br&gt;GBS                         | git                                   | ssh&lt;br&gt;rclone |
+| **remote**  | ssh&lt;br&gt;rclone |               | rclone                                | git                                   | ssh&lt;br&gt;rclone |
+| **GDrive**  | rclone&lt;br&gt;GBS | rclone        |                                       | rclone (via local)&lt;br&gt;GBS (via local) | rclone        |
+| **GitHub**  | git           | git           | rclone (via local)&lt;br&gt;GBS (via local) |                                       | git           |
+| **storage** | ssh&lt;br&gt;rclone | ssh&lt;br&gt;rclone | rclone                                | git                                   |               |
+
+.small75[
+* **ssh** - [Secure Shell protocol](https://www.ssh.com/ssh), also see [**sshfs**](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) for mounting remote file system to local machine via ssh protocol
+* **GBS** - [Google Backup &amp; Sync](https://www.google.com/drive/download/backup-and-sync/)
+* [**git**](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+* [**rclone**](https://rclone.org/)
+
+]
+
+---
+### Further reference
+
+.small75[
+**Reproducible research**
+- [CodeRefinery](https://coderefinery.github.io/reproducible-research/)
+- [The Turing Way](https://the-turing-way.netlify.com/)
+
+**File organization**
+- [A Quick Guide to Organizing Computational Biology Projects](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1000424)
+- [MIT Comm Kit - File Structure](https://mitcommlab.mit.edu/broad/commkit/file-structure/)
+
+**Coding style**
+- General recommendations: [MIT Comm Kit - Coding and Comment Style](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/)
+- Python: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- R: [tydyverse style guide](https://style.tidyverse.org/)
+
+
+**Other templates**
+- [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
+- [R ProjectTemplate](http://projecttemplate.net/index.html)
+]
+
+---
+## Closing remarks
+
+--
+* Reproducible research is difficult, but **not impossible**
+
+--
+* Due to the nature of modern research  culture (or work culture in general), it is unlikely to have a one-size-fits-all solution
+
+--
+* Consider: **scale, goals, contributors, time, access to resources**
+
+--
+* Practicing reproducible reseach should not sacrifice quality of outputs and more importantly, the **joy of research ✨**
+
+.center[
+![:scale 50%](https://media3.giphy.com/media/PmABbbUe3IqUKSOIBV/giphy.gif?cid=790b761117d6314a9dcc65f822296eaa41fcc220d29fb6c6&amp;rid=giphy.gif)
+]
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
