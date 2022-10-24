@@ -14,20 +14,18 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       beforeInit: "macros.js"
+      ratio: "16:9"
 ---
 class: center
 
-## Reproducibility
-#### in computational research project
+## **Reproducibility** in computational research project
 
 ![:scale 40%](img/projects.jpg)
 
 #### Albert Henry
 
 .small75[
-This presentation is available on: [https://alhenry.github.io/reproducibility-presentation](https://alhenry.github.io/reproducibility-presentation)
-
-Source code: [https://github.com/alhenry/reproducibility-presentation](https://github.com/alhenry/reproducibility-presentation)
+[https://alhenry.github.io/reproducibility-presentation](https://alhenry.github.io/reproducibility-presentation)
 ]
 
 ```{r setup, include=FALSE}
@@ -76,11 +74,6 @@ extra_css <- list(
 style_extra_css(extra_css)
 ```
 
----
-# Motivation
-
-.center[![](http://phdcomics.com/comics/archive/phd031214s.gif)]
-
 
 ---
 # Motivation
@@ -97,117 +90,115 @@ style_extra_css(extra_css)
 ---
 ## What is reproducibility?
 
-![](https://the-turing-way.netlify.app/_images/ReproducibleMatrix.jpg)
-
-.small75[The Turing Way Community, Becky Arnold, Louise Bowler, Sarah Gibson, Patricia Herterich, Rosie Higman, … Kirstie Whitaker. (2019, March 25). The Turing Way: A Handbook for Reproducible Data Science (Version v0.0.4). Zenodo. http://doi.org/10.5281/zenodo.3233986]
-
----
-### Why reproducible research is difficult?
-.large125[
-* Different project scale
-
-* Different project goals
-
-* Takes time and effort
-
-* Different standards
-
-* Resource (un)availability
-
-* Lack of training and incentives
-]
-
----
-### Why reproducible research is difficult?
-
-#### _Different project scale_
-
-![](img/scale_meme.png)
----
-.pull-left[
-### Why reproducible research is difficult?
-
-#### _Different project goals_
-]
-.pull-right[![](img/goals_meme.jpg)]
-
-![](img/scale_meme.png)
-
----
-### Why reproducible research is difficult?
-
-#### _Takes time and effort_
-<br/>
 .center[
+![:scale 60%](https://the-turing-way.netlify.app/_images/reproducible-definition-grid.jpg)
+
+.small75[
+The Turing Way project illustration by Scriberia. DOI: 10.5281/zenodo.3332807.
+]
+]
+---
+### Tips for reproducibility
+.large125[
+* Define & design the project
+
+* Minimise duplication
+
+* Minimise non-reproducible actions
+
+* Document everything!
+]
+
+---
+### Tips for reproducibility
+
+.pull-left[
+
+**Define & design the project**
+
+* What are the aims & objectives?
+
+* Who is / are responsible?
+
+* What resources are needed?
+
+* What are the expected outputs?
+
+* Who needs to have access?
+
+<br/>
+**Top Tip**:
+
+More people 👉 more rigour
+]
+
+.pull-right[
 ![](https://imgs.xkcd.com/comics/the_general_problem.png)
 .small75[https://imgs.xkcd.com/comics/the_general_problem.png]
 ]
----
-### Why reproducible research is difficult?
 
-#### _Different standards_
+---
+### Tips for reproducibility
+.pull-left[
+**Minimise duplication**
+
+![](https://imgs.xkcd.com/comics/standards_2x.png)
+
+**Top tip**
+
+Larger effort 👉 Less duplication
+]
+
+.pull-right[
+![](img/duplication.jpeg)
+
+]
+
+---
+### Tips for reproducibility
 
 .pull-left[
-![:scale 80%](img/standard1.jpg)
+**Minimise non-reproducible actions**
 
-![:scale 80%](img/standard3.jpg)
+* Make plans for adding / editing data
+
+* Track changes
+
+* Devise a strategy for branching & merging
+
+* ⚠️ ***Document everything!***
+
+<br/>
+**Top tip**
+
+Write ***time-stamped notes*** for major / breaking changes
+
 ]
+
 .pull-right[
-![:scale 80%](img/standard2.jpg)
-
-![:scale 80%](img/standard4.jpg)
+.center[![](http://phdcomics.com/comics/archive/phd031214s.gif)
+![](https://i0.wp.com/digitalvarys.com/wp-content/uploads/2019/06/image-7.png?w=1229&ssl=1)
+.small50[https://digitalvarys.com/git-branch-and-its-operations/]
 ]
 
----
-### Why reproducible research is difficult?
-
-#### _Resource (un)availability_
-.center[
-![:scale 45%](img/availability.jpg)
-]
-
----
-### Why reproducible research is difficult?
-
-#### _Lack of training and incentives_
-.center[
-![:scale 75%](img/incentives.jpg)
-]
----
-## 
-
-Agile software development practices
-
-> _In software development, agile (sometimes written Agile) practices approach discovering requirements and developing solutions through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s). It advocates adaptive planning, evolutionary development, early delivery, and continual improvement, and it encourages flexible responses to change_
-
-.small75[https://en.wikipedia.org/wiki/Agile_software_development]
-
----
-## How can we fix this?
-
-_The Turing Way_: an open source community-driven guide to reproducible, ethical, inclusive and collaborative data science
-.center[
-![:scale 65%](https://the-turing-way.netlify.app/_images/welcome.jpg)
-
-.small75[https://the-turing-way.netlify.app/]
 ]
 
 ---
 ## Project design
 
-_[https://github.com/alhenry/project-template](https://github.com/alhenry/project-template)_
+_[https://github.com/ihi-comp-med/project-template](https://github.com/ihi-comp-med/project-template)_
 
-A moderately opinionated file structure template for computational research project aiming to produce a written report
+A moderately opinionated file structure template for computational research project
 
 #### Core principles:
 
-* ___Consistent___ – follow certain structure and format
+* ___Consistent___
 
-* ___Simple___ – easy to follow and clear enough for someone unfamiliar with the project
+* ___Simple___
 
-* ___Scalable___ – can be used for small or big projects of many kinds
+* ___Scalable___
 
-* ___Portable___ – easy to import, export, and sync to various computing platforms
+* ___Portable___
 
 ---
 _[https://github.com/alhenry/project-template](https://github.com/alhenry/project-template)_
@@ -232,79 +223,43 @@ _[https://github.com/alhenry/project-template](https://github.com/alhenry/projec
 1. [Optional] [rclone](https://rclone.org/)
 
 ---
-### Directory structure
+## Directory structure
 
-```r
-./
-├── .git/ # hidden folder for git version control
-|
-├── admin/ # admin documents, e.g. meeting notes, applications, ethical approvals, MTA
-|   └── meeting_notes.gsheet
-|
-├── data/ # read only data files used as input for analysis and results
-|   ├── 2020-01/
-|   |   ├── iris.tsv
-|   |   └── mtcars.csv
-|   └── 2020-02/
-|   
-├── scripts/ # analysis scripts
-|   ├── 2020-01/
-|   |   ├── s01_data_generation.sh
-|   |   ├── s02.1_calculate_desc_stats_table1.R
-|   |   └── s02.2_figure1.ipynb
-|   └── 2020-02/
-|
-├── exploratory/ # scratch space for temporary output files / exploratory data analysis
-|
-├── results/ # output of data analysis e.g. tables, figures, jupyter notebook
-|   ├── 2020-01/
-|   |   ├── table1.tsv
-|   |   └── figure1.png
-|   └── 2020-02/
-|
-├── writing/ # Documents for writing
-|   ├── main_text.gdoc
-|   ├── supplementary_table.gsheet
-|   └── analysis_plan.gdoc
-|
-└── ...
-```
+[Refer to documentation in Notion for latest version](https://www.notion.so/comp-med-lab/Project-Template-a0ac2a2b4a6942ef8c66f5780679511b)
 
 ---
 ### Computing platforms
 
 * **local** - local machine e.g. personal laptop, UCL machine
 
-* **remote** - remote computing platform, typically a headless machine in HPC cluster (e.g. [UCL Myriad](https://wiki.rc.ucl.ac.uk/wiki/Myriad), UCL CS Cluster) or cloud computing services (e.g. [Amazon Web Service](https://aws.amazon.com/), [Google Computing Platform](https://cloud.google.com/)
+* **compute** - remote computing platform, typically a headless machine in HPC cluster (e.g. [UCL Myriad](https://wiki.rc.ucl.ac.uk/wiki/Myriad), UCL CS Cluster) or cloud computing services (e.g. [Amazon Web Service](https://aws.amazon.com/), [Google Computing Platform](https://cloud.google.com/)
 
-* **GDrive** - Google Drive
+* **drive** - remote disk drive, typically for sharing results / collaborative writing, e.g. Google Drive / OneDrive
 
-* **GitHub** - GitHub
+* **code** - remote code repository e.g. GitHub / GitLab
 
-* **storage** - data storage space (for backup only) e.g. [UCL Research Data Storage Service](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service), [UCL S: drive](https://www.ucl.ac.uk/isd/support-staff/s-drive-documentation/s-drive-how-it-works-permissions)
+* **archive** - remote storage for data backup / project archive e.g. [UCL Research Data Storage Service](https://www.ucl.ac.uk/isd/services/research-it/research-data-storage-service), [UCL S: drive](https://www.ucl.ac.uk/isd/support-staff/s-drive-documentation/s-drive-how-it-works-permissions)
 
 ---
 ### Which folders live in which platforms?
-|             | local | remote | GDrive | GitHub | storage |
-|-------------|:-----:|:------:|:------:|:------:|:-------:|
-| **.git**        |   ✅   |    ✅   |        |    ✅   |         |
-| **admin**       |   ✅   |        |    ✅   |        |         |
-| **data**        |       |    ✅   |        |        |    ✅    |
-| **scripts**     |   ✅   |    ✅   |        |    ✅   |         |
-| **exploratory** |   ✅   |    ✅   |        |        |         |
+|                 | local | compute | drive | code | archive |
+|-----------------|:-----:|:------:|:------:|:------:|:-------:|
+| **.git**        |   ✅  |    ✅   |        |    ✅   |         |
+| **resources**   |       |    ✅   |        |        |    ✅    |
+| **scripts**     |   ✅  |    ✅   |        |    ✅   |         |
 | **results**     |       |    ✅   |    ✅   |        |         |
-| **writing**     |   ✅   |        |    ✅   |        |         |
+| **workflow**    |   ✅  |   ✅    |      |    ✅   | |      
 
 ---
 ### How to transfer / sync files across platforms?
 
-|         | local         | remote        | GDrive                                | GitHub                                | storage       |
+|         | local         | compute        | drive                                | code                                | archive       |
 |---------|---------------|---------------|---------------------------------------|---------------------------------------|---------------|
 | **local**   |               | ssh           | rclone<br>GBS                         | git                                   | ssh<br>rclone |
 | **remote**  | ssh<br>rclone |               | rclone                                | git                                   | ssh<br>rclone |
-| **GDrive**  | rclone<br>GBS | rclone        |                                       | rclone (via local)<br>GBS (via local) | rclone        |
-| **GitHub**  | git           | git           | rclone (via local)<br>GBS (via local) |                                       | git           |
-| **storage** | ssh<br>rclone | ssh<br>rclone | rclone                                | git                                   |               |
+| **compute**  | rclone<br>GBS | rclone        |                                       | rclone (via local)<br>GBS (via local) | rclone        |
+| **drive**  | git           | git           | rclone (via local)<br>GBS (via local) |                                       | git           |
+| **archive** | ssh<br>rclone | ssh<br>rclone | rclone                                | git                                   |               |
 
 .small75[
 * **ssh** - [Secure Shell protocol](https://www.ssh.com/ssh), also see [**sshfs**](https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) for mounting remote file system to local machine via ssh protocol
@@ -328,9 +283,8 @@ _[https://github.com/alhenry/project-template](https://github.com/alhenry/projec
 
 **Coding style**
 - General recommendations: [MIT Comm Kit - Coding and Comment Style](https://mitcommlab.mit.edu/broad/commkit/coding-and-comment-style/)
-- Python: [Google Python Style Guide](https://google.github.io/styleguide/pyguide.html)
+- Python: [PEP 8 – Style Guide for Python Code](https://peps.python.org/pep-0008/)
 - R: [tydyverse style guide](https://style.tidyverse.org/)
-
 
 **Other templates**
 - [Cookiecutter Data Science](https://drivendata.github.io/cookiecutter-data-science/)
@@ -344,14 +298,10 @@ _[https://github.com/alhenry/project-template](https://github.com/alhenry/projec
 * Reproducible research is difficult, but **not impossible**
 
 --
-* Due to the nature of modern research  culture (or work culture in general), it is unlikely to have a one-size-fits-all solution
+* Learn from agile software development practice (from Wikipedia):
+> _In software development, agile (sometimes written Agile) practices approach discovering requirements and developing solutions through the collaborative effort of self-organizing and cross-functional teams and their customer(s)/end user(s).
+It advocates adaptive planning, evolutionary development, early delivery, and continual improvement, and it encourages flexible responses to change_
 
 --
-* Consider: **scale, goals, contributors, time, access to resources**
-
---
-* Practicing reproducible reseach should not sacrifice quality of outputs and more importantly, the **joy of research ✨**
-
-.center[
-![:scale 50%](https://media3.giphy.com/media/PmABbbUe3IqUKSOIBV/giphy.gif?cid=790b761117d6314a9dcc65f822296eaa41fcc220d29fb6c6&rid=giphy.gif)
-]
+* _A foolish consistency is the hobgoblin of little minds_
+– Ralph Waldo Emerson
